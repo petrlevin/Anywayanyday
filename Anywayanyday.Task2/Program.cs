@@ -31,6 +31,7 @@ namespace Anywayanyday.Task1
                             ))
                         .RegisterController<GuestBookController>("guestbook")
                         .RegisterController<HelloWordController>()))
+
             {
                 Console.WriteLine("Server have been started");
                 Console.ReadLine();
