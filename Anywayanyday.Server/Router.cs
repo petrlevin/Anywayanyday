@@ -16,7 +16,7 @@ namespace Anywayanyday.Server
         private readonly ILookup<string, IController> _map;
         private Regex _pathRegex;// = new Regex(@"^([\\\w \.-]*)",RegexOptions.Compiled);
 
-        private bool BuildMap()
+        private bool BuildRegex()
         {
             if (_pathRegex != null)
                 return true;
@@ -41,7 +41,7 @@ namespace Anywayanyday.Server
 
         public bool ProcessRequest(HttpListenerRequest request, HttpListenerResponse response)
         {
-            if (!BuildMap())
+            if (!BuildRegex())
                 return false;
             if (_pathRegex == null)
                 return false;
